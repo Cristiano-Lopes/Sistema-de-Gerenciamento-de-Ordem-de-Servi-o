@@ -1,0 +1,93 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de OS</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+
+			<h1>Fila de Incidentes</h1>
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:commandButton value="Pesquisar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/cadastros/CadastroChamado" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+
+				<p:outputLabel value="Cliente" for="cliente" />
+				<p:selectOneMenu id="cliente" filter="true">
+					<f:selectItem itemLabel="Selecione o Cliente" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="CPF: " for="cpf" />
+				<p:inputMask id="cpf" mask="999.999.999-99" />
+			</p:panelGrid>
+			<br />
+
+			<p:panel header="Fila de Chamados - Listagem">
+				<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado."
+					paginator="true" value="" var="" rows="5">
+
+					<p:column headerText="# OS">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Data de Abertura">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Cliente">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Técnico Responsável">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Status">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Prioridade">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Problema Descrição">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Data de Encerramento">
+						<h:outputText value="" />
+					</p:column>
+
+					<p:column headerText="Opções">
+						<p:commandButton icon="ui-icon-trash" update=" ">
+							<p:confirm header="Confirmação"
+								message="Deseja excluir a pessoa?" icon="ui-icon-alert" />
+							<f:attribute name="" value="" />
+						</p:commandButton>
+
+						<p:commandButton icon="ui-icon-pencil" update=" "
+							oncomplete="PF('dialogo').show();">
+							<!-- 						<f:attribute name="" value="" /> -->
+							<!-- 						<f:actionListener -->
+							<!-- 							type="org.omnifaces.eventlistener.ResetInputAjaxActionListener" /> -->
+						</p:commandButton>
+					</p:column>
+				</p:dataTable>
+			</p:panel>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

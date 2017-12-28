@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+header {
+	padding: 5 0px;
+	height: 90px;
+	background-color: #000;
+	color: #fff;
+}
+
+header>div {
+	margin-left: 8px;
+}
+
+#menuLateral {
+	float: left;
+	background-color: #ccffcc;
+	padding: 5px;
+	width: 150px;
+}
+
+#conteudo {
+	padding: 0px 8px;
+}
+
+footer {
+	padding: 0px 8px;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 26px;
+	font-weight: 650;
+	padding: 0;
+	margin: 0;
+}
+
+#login-dialog {
+	width: 290px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+#body-color {
+	background-color: #CFCFCF;
+}
+
+.grid-login {
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+}
+
+.label {
+	color: #fff;
+}
+
+.button {
+	border-radius: 10px;
+	width: 84px;
+	height: 35px;
+	background: #800080;
+	font-weight: lighter;
+	font-size: 16px;
+	color: #fff;
+	border: 3px solid #CFCFCF;
+}
+
+.button-medium {
+	border-radius: 10px;
+	width: 100px;
+	height: 35px;
+	background: #800080;
+	font-weight: lighter;
+	font-size: 16px;
+	color: #fff;
+	border: 3px solid #CFCFCF;
+}
+
+}
+.rotulo {
+	width: 150px;
+}
+
+.ui-panelgrid td {
+	height: 34px;
+}
+
+.ajax-status {
+	position: static;
+	top: 90px;
+	right: 65px;
+	width: 35px;
+	height: 35px;
+}

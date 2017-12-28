@@ -1,0 +1,91 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Cadastro de Pessoa</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+			<h1>Cadastro de Pessoa</h1>
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:button value="Novo" outcome="/cadastros/CadastroPessoa" />
+					<p:commandButton value="salvar" id="botaoSalvar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Pesquisa" outcome="/pesquisas/PesquisaPessoa" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="4" id="painel"
+				style="width: 100%; margin-top: 20px">
+				<p:outputLabel for="descricao" value="Descrição:" />
+				<p:inputText id="descricao" maxlength="50" size="30" value=""
+					required="true" requiredMessage="O campo 'Nome' é obrigatório" />
+
+				<p:outputLabel for="rg" value="RG:" />
+				<p:inputText id="rg" />
+
+				<p:outputLabel for="cpf" value="CPF:" />
+				<p:inputText id="cpf" />
+
+				<p:outputLabel for="estado" value="Estado:" />
+				<p:selectOneMenu id="estado" filter="true" required="true"
+					requiredMessage="O campo 'Estado' é obrigatório">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione um estado" />
+					<f:selectItems value="" var="" itemValue="" itemLabel="" />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="cidade" value="Cidade:" />
+				<p:selectOneMenu id="cidade" filter="true" required="true"
+					requiredMessage="O campo 'Cidade' é obrigatório">
+					<f:selectItem noSelectionOption="true"
+						itemLabel="Selecione uma cidade" />
+					<f:selectItems value="" var="" itemValue="" itemLabel="" />
+				</p:selectOneMenu>
+
+				<p:outputLabel for="rua" value="Rua:" />
+				<p:inputText id="rua" maxlength="100" size="50" value=""
+					required="true" requiredMessage="O campo 'Rua' é obrigatório" />
+
+				<p:outputLabel value="Número" />
+				<p:inputText maxlength="5" size="10" value="" required="true"
+					requiredMessage="O campo 'Número' é obrigatório"
+					converterMessage="Informe um valor válido para o campo 'Número'"
+					validatorMessage="Informe um valor entre 1 e 32767 para o campo 'Número'">
+					<f:validateLongRange minimum="1" maximum="32767" />
+				</p:inputText>
+
+				<p:outputLabel for="bairro" value="Bairro:" />
+				<p:inputText id="bairro" maxlength="30" size="20" value=""
+					required="true" requiredMessage="O campo 'Bairro' é obrigatório" />
+
+				<p:outputLabel for="cep" value="CEP:" />
+				<p:inputText id="cep" />
+
+				<p:outputLabel for="complemento" value="Complemento:" />
+				<p:inputText id="complemento" maxlength="10" size="10" value="" />
+
+				<p:outputLabel for="telefone" value="Telefone:" />
+				<p:inputText id="telefone" />
+
+				<p:outputLabel for="celular" value="Celular:" />
+				<p:inputText id="celular" />
+
+				<p:outputLabel for="email" value="Email:" />
+				<p:inputText id="email" maxlength="100" size="50" value=""
+					required="true" requiredMessage="O campo 'Email' é obrigatório" />
+
+				<p:outputLabel value="" />
+				<p:outputLabel value="" />
+
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

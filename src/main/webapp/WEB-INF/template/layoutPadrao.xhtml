@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Sistem de Ordem de Serviço Web</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css" />
+	<!-- 	<h:outputScript library="js" name="jquery.maskMoney.js" /> -->
+</h:head>
+
+<h:body>
+
+	<p:ajaxStatus styleClass="ajax-status" onsuccess="configurarMoeda">
+		<f:facet name="start">
+			<h:graphicImage library="images" name="loading.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="120">
+			<div id="topo">
+				<ui:include src="/WEB-INF/template/topo.xhtml" />
+			</div>
+
+		</p:layoutUnit>
+
+		<p:layoutUnit position="south" size="35"
+			header="&copy;2016 Todos os Direitos Reservados &nbsp;&bull;&nbsp; Cristiano Lopes"
+			style="text-align:center">
+			<div id="rodape">
+				<ui:include src="rodape.xhtml" />
+			</div>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" size="200" resizable="false"
+			closable="false" collapsible="false">
+			<ui:include src="/WEB-INF/template/menu.xhtml" />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center">
+			<div id="conteudo">
+				<ui:insert name="conteudo"></ui:insert>
+			</div>
+		</p:layoutUnit>
+
+	</p:layout>
+
+
+
+
+
+
+
+
+
+
+	<!-- Status de atualização, imagem de carregamento -->
+	<!-- 	<div> -->
+	<!-- 		<p:ajaxStatus styleClass="ajax-status" onsuccess="configurarMoeda"> -->
+	<!-- 			<f:facet name="start"> -->
+	<!-- 				<h:graphicImage library="images" name="loading.gif" /> -->
+	<!-- 			</f:facet> -->
+
+	<!-- 			<f:facet name="complete"> -->
+	<!-- 				<h:outputText value="" /> -->
+	<!-- 			</f:facet> -->
+	<!-- 		</p:ajaxStatus> -->
+	<!-- 	</div> -->
+
+	<!-- 	Logo principal do sistema, mensagem do usuário -->
+	<!-- 	<header> -->
+	<!-- 	<div style="float: left;"> -->
+	<!-- 		<h:link> -->
+	<!-- 			<h:graphicImage library="images" name="logoPrincipal.png" /> -->
+	<!-- 		</h:link> -->
+	<!-- 	</div> -->
+
+	<!-- 	<div style="float: right; margin-right: 110px"> -->
+	<!-- 		<span -->
+	<!-- 			style="float: left; height: 30px; line-height: 30px; margin-right: 60px"> -->
+	<!-- 			Olá Usuário! </span> -->
+	<!-- 	</div> -->
+	<!-- 	</header> -->
+
+	<!-- 	<div id="menuLateral">Menu Lateral</div> -->
+
+	<!-- 	<div style="clear: both;"></div> -->
+
+	<!-- 	<div id="conteudo"> -->
+	<!-- 		<ui:insert name="corpo" /> -->
+	<!-- 	</div> -->
+
+	<!-- 	<p:separator style="margin-top: 20px" /> -->
+
+	<!-- 	<footer> Sistema de Gerenciamento de Ordem de Serviços WEB </footer> -->
+
+</h:body>
+</html>

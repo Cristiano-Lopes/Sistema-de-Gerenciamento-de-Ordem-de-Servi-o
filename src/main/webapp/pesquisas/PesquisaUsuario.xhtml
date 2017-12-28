@@ -1,0 +1,60 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de Usuário</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+
+			<h1>Pesquisar Usuario</h1>
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:commandButton value="Pesquisar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/cadastros/CadastroUsuario" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+
+				<p:outputLabel value="Nome:" for="nome" />
+				<p:inputText id="nome" size="20" maxlength="20" />
+
+				<p:outputLabel value="CPF: " for="cpf" />
+				<p:inputMask id="cpf" mask="999.999.999-99" />
+
+			</p:panelGrid>
+			<br />
+
+			<p:dataTable emptyMessage="Nenhum registro encontrado."
+				paginator="true">
+
+				<p:column headerText="Nome">
+				</p:column>
+
+				<p:column headerText="CPF">
+				</p:column>
+
+				<p:column headerText="Tipo">
+				</p:column>
+
+				<p:column headerText="Ativo">
+				</p:column>
+
+				<p:column headerText="Opções">
+				</p:column>
+			</p:dataTable>
+
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

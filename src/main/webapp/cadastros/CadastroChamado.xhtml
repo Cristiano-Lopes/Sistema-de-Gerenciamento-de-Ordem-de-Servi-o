@@ -1,0 +1,72 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Novo Chamado</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+
+			<h1>Abertura de Chamado</h1>
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:button value="Novo" outcome="/cadastros/CadastroChamado" />
+					<p:commandButton value="salvar" id="botaoSalvar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Pesquisa" outcome="/pesquisas/PesquisaChamado" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="4" id="painel"
+				style="width: 100%; margin-top: 20px">
+
+				<p:outputLabel value="Numero da OS" for="numero" />
+				<p:inputText id="numero" size="20" maxlength="20" />
+
+				<p:outputLabel value="Data da Abertura:" for="data" />
+				<p:inputText id="data" size="20" maxlength="20" />
+
+				<p:outputLabel value="Cliente" for="cliente" />
+				<p:selectOneMenu id="cliente" filter="true">
+					<f:selectItem itemLabel="Selecione o Cliente" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Tecnico Responsável" for="tecnico" />
+				<p:selectOneMenu id="tecnico" filter="true">
+					<f:selectItem itemLabel="Selecione o Tecnico" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Status:" />
+				<p:selectOneRadio>
+					<f:selectItem itemValue="A" itemLabel="Aberta" />
+					<f:selectItem itemValue="E" itemLabel="Executando" />
+					<f:selectItem itemValue="F" itemLabel="Finalizada" />
+				</p:selectOneRadio>
+
+				<p:outputLabel value="Prioridade:" />
+				<p:selectOneRadio>
+					<f:selectItem itemValue="A" itemLabel="Alta" />
+					<f:selectItem itemValue="M" itemLabel="Media" />
+					<f:selectItem itemValue="B" itemLabel="Baixa" />
+				</p:selectOneRadio>
+
+				<p:outputLabel value="Categoria do Serviço:" for="categoria" />
+				<p:selectOneMenu id="categoria">
+					<f:selectItem itemLabel="Selecione a Categoria" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Descrição" for="descricao" />
+				<p:inputTextarea id="descricao" rows="10" cols="50" />
+
+			</p:panelGrid>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

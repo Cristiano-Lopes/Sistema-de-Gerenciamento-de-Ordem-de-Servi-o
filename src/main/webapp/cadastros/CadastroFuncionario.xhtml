@@ -1,0 +1,42 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Novo Funcionario</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form>
+			<h1>Cadastro de Funcionário</h1>
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:button value="Novo" outcome="/cadastros/CadastroFuncionario" />
+					<p:commandButton value="salvar" id="botaoSalvar" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:button value="Pesquisa" outcome="/pesquisas/PesquisaFuncionario" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px">
+				<p:outputLabel value="Pessoa:" />
+				<p:selectOneMenu filter="true">
+					<f:selectItem itemValue="" itemLabel="Selecione uma pessoa" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Data de Admissão:" />
+				<p:calendar />
+
+				<p:outputLabel value="Carteira de Trabalho" for="carteira" />
+				<p:inputText id="carteira" />
+			</p:panelGrid>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

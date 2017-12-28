@@ -1,0 +1,31 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:form>
+		<p:panelMenu>
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Início" outcome="/Home" />
+				<p:menuitem value="Pessoa" outcome="/cadastros/CadastroPessoa" />
+				<p:menuitem value="Cliente" outcome="/cadastros/CadastroCliente" />
+				<p:menuitem value="Funcionário"
+					outcome="/cadastros/CadastroFuncionario" />
+				<p:menuitem value="Usuário" outcome="/cadastros/CadastroUsuario" />
+				<p:menuitem value="Chamado" outcome="/cadastros/CadastroChamado" />
+				<p:menuitem value="Serviço" outcome="/cadastros/CadastroServico" />
+			</p:submenu>
+
+			<p:submenu label="Pesquisas">
+				<p:menuitem value="Pessoa" outcome="/pesquisas/PesquisaPessoa" />
+				<p:menuitem value="Cliente" outcome="/pesquisas/PesquisaCliente" />
+				<p:menuitem value="Funcionário"
+					outcome="/pesquisas/PesquisaFuncionario" />
+				<p:menuitem value="Usuário" outcome="/pesquisas/PesquisaUsuario" />
+				<p:menuitem value="Chamado" outcome="/pesquisas/PesquisaChamado" />
+				<p:menuitem value="Serviço" outcome="/pesquisas/PesquisaServico" />
+			</p:submenu>
+		</p:panelMenu>
+	</h:form>
+
+</ui:composition>
